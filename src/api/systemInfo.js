@@ -6,14 +6,8 @@
  * @Description: systemInfo
  */
 import axios from './axios';
-let baseURL = '';
-if (process.env.NODE_ENV === 'development') {
-  baseURL = '/api';
-} else if (window.location.host.indexOf('imagiclamp.cn') !== -1) {
-  baseURL = 'https://dev.imagiclamp.cn/chery';
-} else {
-  baseURL = 'https://chery.ihuyue.cn/chery';
-}
+let baseURL = import.meta.env.VITE_APP_API_BASE_URL;
+
 export const login = function (data) {
   return axios({
     url: `${baseURL}/user/h5_login`,

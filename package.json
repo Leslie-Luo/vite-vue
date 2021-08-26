@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build",
+    "build:test": "vite build --mode test",
+    "build:production": "vite build",
     "serve": "vite preview",
     "commit": "git cz",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
