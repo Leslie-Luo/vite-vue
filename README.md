@@ -18,6 +18,8 @@
 
 - 代码提交采用 `commit messages` 格式规范
 
+- 通过 `.env` 文件配置不同环境变量
+
 ## 安装依赖
 
 使用 NPM:
@@ -44,6 +46,22 @@ npm run dev
 
 ```
 yarn dev
+```
+
+### 构建生产版本
+
+使用 NPM:
+
+```
+npm run build:test  // 测试环境
+npm run build:production  // 正式环境
+```
+
+使用 Yarn:
+
+```
+yarn build:test // 测试环境
+yarn build:production // 正式环境
 ```
 
 ### 提交项目代码
