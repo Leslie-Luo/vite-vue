@@ -6,12 +6,21 @@
  * @Description: 请填写简介
 -->
 <template>
-  <div>Home</div>
+  <div>
+    Home
+    <div>
+      <van-button>Axios</van-button>
+    </div>
+  </div>
 </template>
 
 <script>
+import { Button } from 'vant';
 import { login } from '@/api/systemInfo';
 export default {
+  components: {
+    'van-button': Button,
+  },
   created() {
     this.loginTest();
   },
