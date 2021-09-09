@@ -21,18 +21,21 @@ service.interceptors.request.use(
   },
   (error) => Promise.reject(error)
 );
+
 // 响应拦截器
 service.interceptors.response.use(
   (response) => {
     const res = response.data;
     if (response.status !== 200) {
-      return Promise.reject(new Error(res.message || 'Error'));
-    } else {
-      return res;
+      return Promise.reject(new Error(res.msg || 'Error'));
     }
+    if (res.code === 10000) {
+      return res.data;
+    }
+    return Promise.reject(new Error(res.msg || 'Error'));
   },
   (error) => {
-    return Promise.reject(error);
+    return Promise.reject(error.response.data);
   }
 );
 export default service;

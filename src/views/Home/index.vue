@@ -16,17 +16,17 @@
 
 <script>
 import { Button } from 'vant';
-import { login } from '@/api/systemInfo';
+import { getSerialDetail } from '@/api/api';
 export default {
   components: {
     'van-button': Button,
   },
   created() {
-    this.loginTest();
+    this.getSerialDetailTest();
   },
   methods: {
-    loginTest() {
-      login()
+    getSerialDetailTest() {
+      getSerialDetail()
         .then((result) => {
           console.log('result: ', result);
         })

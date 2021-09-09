@@ -8,10 +8,7 @@
 import axios from './axios';
 let baseURL = import.meta.env.VITE_APP_API_BASE_URL;
 
-export const login = function (data) {
-  return axios({
-    url: `${baseURL}/user/h5_login`,
-    data,
-    method: 'post',
-  });
+export const getSerialDetail = (params = {}) => {
+  const url = `${baseURL}/page/serial/detail`;
+  return axios.get(url, { params });
 };
