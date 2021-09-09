@@ -9,7 +9,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
   // 开启历史模式
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.VITE_APP_BASE_URL),
   routes: [
     {
       path: '/',

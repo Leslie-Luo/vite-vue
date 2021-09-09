@@ -10,14 +10,14 @@
 </template>
 
 <script>
-import { login } from '@/api/systemInfo';
+import { getSerialDetail } from '@/api/api';
 export default {
   created() {
-    this.loginTest();
+    this.getSerialDetailTest();
   },
   methods: {
-    loginTest() {
-      login()
+    getSerialDetailTest() {
+      getSerialDetail()
         .then((result) => {
           console.log('result: ', result);
         })
